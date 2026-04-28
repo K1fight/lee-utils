@@ -13,7 +13,6 @@ import java.util.Map;
  * @author lee
  */
 @RestController
-@RequestMapping("/api")
 public class HealthController {
 
     @GetMapping("/health")

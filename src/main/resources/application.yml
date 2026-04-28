@@ -7,13 +7,9 @@ spring:
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    register-with-eureka: true
-    fetch-registry: true
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${server.port}
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
 
 management:
   endpoints:
@@ -24,7 +20,16 @@ management:
     health:
       show-details: always
 
+
 logging:
   level:
     com.lee: debug
     org.springframework.cloud: info
+feign:
+  logger: full
+  level: FULL
+
+openweather:
+  api-key: e30b514a95528199c857c8b33d8ed21d
+  default-lat: 35.42
+  default-lon: 119.52
